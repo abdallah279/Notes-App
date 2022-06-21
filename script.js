@@ -41,6 +41,7 @@ addBtn.addEventListener("click", ()=>{
     popupHeader.innerHTML = "Add New Note";
     input.value = '';
     textarea.value = '';
+    input.focus();
 });
 
 // handle close popup
