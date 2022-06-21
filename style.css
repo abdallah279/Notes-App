@@ -53,6 +53,7 @@ li{
 .cards .add{
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .cards .add .plus{
@@ -63,7 +64,6 @@ li{
     display: grid;
     place-items: center;
     margin-bottom: 30px;
-    cursor: pointer;
 }
 
 .cards .add i{

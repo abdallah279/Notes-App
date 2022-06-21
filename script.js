@@ -1,4 +1,4 @@
-const addBtn = document.querySelector(".plus"),
+const addBtn = document.querySelector(".add"),
 popupApp = document.querySelector(".popup-app"),
 popupHeader = document.querySelector(".popup .header h4"),
 close = document.querySelector(".close"),
