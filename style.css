@@ -1,0 +1,230 @@
+/* Import Google Font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+:root {
+    --mainColor: #0d1117;
+    --secondColor: #e7e7e7;
+    --cardColor: rgba(255, 255, 255, 0.11);
+    --lineColor: #e7e7e723;
+    --overLayColor: rgba(0, 0, 0, 0.481);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    color: var(--secondColor);
+    background-color: var(--mainColor);
+    font-family: 'Poppins' ,sans-serif;
+}
+
+li{
+    list-style: none;
+}
+
+.app{
+    padding: 20px;
+}
+
+.app h1{
+    text-align: center;
+}
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 250px);
+    gap: 15px;
+    margin: 20px;
+}
+
+.cards .card-style{
+    padding: 10px 20px;
+    background-color: var(--cardColor);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 200px;
+}
+
+.cards .add{
+    justify-content: center;
+    align-items: center;
+}
+
+.cards .add .plus{
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    border: 2px dashed var(--secondColor);
+    display: grid;
+    place-items: center;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+.cards .add i{
+    font-size: 30px;
+}
+
+.cards .card .card_content{
+    font-size: 18px;
+    font-weight: 500;
+    max-height: 165px;
+    overflow-y: auto;
+}
+
+.card .card_details{
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    padding-top: 10px;
+    border-top: 1px solid var(--lineColor);
+    margin: 10px 0;
+}
+
+.card .card_details > span{
+    font-size: 14px;
+}
+
+.card .card_details .menu-app{
+    position: relative;
+}
+
+.card .card_details .menu-app i{
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.card_details .menu-app .menu{
+position: absolute;
+    background-color: #000;
+    /* width: 100px; */
+    padding: 5px 0;
+    border-radius: 4px;
+    top: 20px;
+    right: -5px;
+    transform-origin: top right;
+    transition: all .2s linear;
+    z-index: 5;
+    transform: scale(0);
+}
+
+.card_details .menu-app.show .menu{
+    transform: scale(1);
+}
+
+.card_details .menu-app .menu li{
+    height: 25px;
+    font-size: 16px;
+    margin-bottom: 2px;
+    padding: 17px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    transition: all .2s linear;
+    cursor: pointer;
+}
+
+.card_details .menu-app .menu li:last-child{
+    margin-bottom: 0;
+}
+
+.card_details .menu-app .menu li:hover {
+    background-color: var(--lineColor);
+}
+
+.menu li i{
+    padding-right: 8px;
+}
+
+.popup-app {
+    position: fixed;
+    inset: 0;
+    background-color: var(--overLayColor);
+    display: grid;
+    place-items: center;
+    z-index: 999;
+    display: none;
+}
+
+.popup-app.open{
+    display: grid;
+}
+
+.popup-app .popup {
+    background-color: rgb(32 32 32);
+    width: 340px;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.popup-app .popup .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.popup-app .popup .header i {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.popup-app .popup form {
+    margin: 15px 0px;
+}
+
+.popup-app .popup form > div {
+    margin: 15px 0px;
+}
+
+.popup-app .popup form > div :where(input, textarea) {
+    display: block;
+    width: 100%;
+    outline: 0;
+    padding: 7px;
+    background-color: initial;
+    border: 1px solid #eee;
+    border-radius: 3px;
+    color: var(--secondColor);
+}
+
+.popup-app .popup form > div textarea {
+    resize: none;
+    height: 120px;
+}
+
+.popup-app .popup form > button {
+    width: 100%;
+    padding: 10px 0px;
+    border-width: 0;
+    background-color: var(--cardColor);
+    color: var(--secondColor);
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.card .card_content::-webkit-scrollbar,
+.popup textarea::-webkit-scrollbar{
+  width: 0;
+}
+
+.card .card_content:hover::-webkit-scrollbar,
+.popup textarea:hover::-webkit-scrollbar{
+  width: 5px;
+  height: 12px;
+}
+
+.card .card_content:hover::-webkit-scrollbar-track,
+.popup textarea:hover::-webkit-scrollbar-track{
+  background: var(--mainColor);
+  border-radius: 15px;
+}
+
+.card .card_content:hover::-webkit-scrollbar-thumb,
+.popup textarea:hover::-webkit-scrollbar-thumb{
+  background: #999;
+  border-radius: 15px;
+}
